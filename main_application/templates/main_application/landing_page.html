@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+{% load static %}
+{% csrf_token %}
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-71499906-6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'UA-71499906-6');
+    </script>
+    <!-- BASICS -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Django Project</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href={% static "main_theme/css/isotope.css" %} media="screen"/>
+    <link rel="stylesheet" href={% static "main_theme/js/fancybox/jquery.fancybox.css" %} type="text/css"
+          media="screen"/>
+    <link rel="stylesheet" href={% static "main_theme/css/bootstrap.css" %}>
+    <link rel="stylesheet" href={% static "main_theme/css/bootstrap-theme.css" %}>
+    <link href={% static "main_theme/css/responsive-slider.css" %} rel="stylesheet">
+    <link rel="stylesheet" href={% static "main_theme/css/animate.css" %}>
+    <link rel="stylesheet" href={% static "main_theme/css/style.css" %}>
+
+    <link rel="stylesheet" href={% static "main_theme/css/font-awesome.min.css" %}>
+    <!-- skin -->
+    <link rel="stylesheet" href={% static "main_theme/skin/default.css" %}>
+    <style>
+
+        sup {
+            vertical-align: super;
+            font-size: smaller;
+            position: relative;
+            top: -0.1em;
+        }
+
+        .mylogo {
+            text-align: left;
+        }
+
+        .landing-dropdown {
+            background-color: #00000000 !important;
+            background: none !important;
+        }
+
+        .landing-dropdown:hover {
+            cursor: pointer;
+            background-color: #00000000 !important;
+            background: none !important;
+        }
+
+        .landing-dropdown:focus {
+            background-color: #00000000 !important;
+            background: none !important;
+        }
+
+        .landing-dropdown-sub {
+            background: rgb(28, 28, 28);
+        }
+
+        .landing-dropdown-sub:hover {
+            background: rgb(28, 28, 28) !important;
+        }
+
+        .dropdown-menu {
+            background: rgb(28, 28, 28)
+        }
+
+        .landing-dropdown-sub a {
+            color: white !important;
+            font-family: "Raleway", Helvetica, Arial, sans-serif;
+        }
+
+        .landing-dropdown-sub a:hover {
+            color: #828f30 !important;
+            background: rgb(28, 28, 28) !important;
+        }
+
+        .carousel-caption {
+            line-height: 0.8em;
+        }
+
+
+    </style>
+    <!-- =======================================================
+      Theme Name: Green
+      Theme URL: https://bootstrapmade.com/green-free-one-page-bootstrap-template/
+      Author: BootstrapMade
+      Author URL: https://bootstrapmade.com
+    ======================================================= -->
+</head>
+
+<body>
+
+
+<div class="header">
+
+    <section id="header" class="appear">
+        {#    <section id="header" class="appear section">#}
+        {#fixes error with navigation,that home is never reached in big screens.creates error with colors#}
+        <div class="navbar navbar-fixed-top" role="navigation"
+             data-0="line-height:100px; height:100px; background-color:rgba(0,0,0,0.3);"
+             data-300="line-height:60px; height:60px; background-color:rgba(0,0,0,1);">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="fa fa-bars color-white"></span>
+                </button>
+                <div class="fadeInUp mylogo" data-wow-offset="0" data-wow-delay="0.1s" href="main"
+                     data-0="width:99%;height:90%" data-300="width:40%;height:40%;"><a href=""><img
+                        src="static/images/logo.png" style="width: 9%;height:10%;"></a>
+                    <span class="hidden-sm hidden-xs" data-0="display:inline-block; opacity:90%"
+                          data-200="opacity:50%;display:none;" data-300="display:none; opacity:0%"
+                          style="display: inline-block;float: right;font-size: 0.8em;color: white">The Django Project platform has been developed in the context of the EU Horizon 2020 project
+                    </span>
+                </div>
+            </div>
+            <div class="navbar-collapse collapse" style="margin-right: 0">
+                <ul class="nav navbar-nav" data-0="margin-top:0px;background-color: rgba(28, 28, 28, 1);"
+                    data-300="margin-top:0px;background-color: rgba(75, 75, 75, 0.5);"
+                    style="width: 100%">
+                    <li><a href="#header" style="font-weight: 500">Home</a></li>
+                    <li><a href="#section-works" style="font-weight: 500">Documentation</a></li>
+                    <li><a href="#section-services" style="font-weight: 500">Results</a></li>
+                    <li>
+
+                        <a class="dropdown-toggle landing-dropdown" type="button" id="dropdownMenu1"
+                           data-toggle="dropdown" style="font-weight: 500">The Projects<i
+                                style="margin-left: 0.5em" class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                            <li role="presentation" class="landing-dropdown-sub"><a role="menuitem" tabindex="-1"
+                                                                                    href="">H2020
+                                PR1</a></li>
+                            <li role="presentation" class="landing-dropdown-sub"><a role="menuitem" tabindex="-1"
+                                                                                    href="">H2020
+                                PR2</a>
+                            </li>
+                            <li role="presentation" class="landing-dropdown-sub"><a role="menuitem" tabindex="-1"
+                                                                                    href="">H2020
+                                PR3</a></li>
+                            </li>
+                        </ul>
+
+                    </li>
+                    <li><a href="#section-opencall" style="font-weight: 500">Open Call</a></li>
+                    <li><a href="#section-contact" style="font-weight: 500">Contact</a></li>
+                    <li>
+                        <a href="feedback_form/"><i style="margin-right: 0.5em" class="fa fa-star"></i>Evaluate Us</a>
+                    </li>
+                    <li class="quick-access-content">
+                        <a href="dynamic_doc/"><i style="margin-right: 0.5em" class="fa fa-rocket"></i>Model Dynamic
+                            Documentation</a></li>
+                </ul>
+            </div>
+            <!--/.navbar-collapse -->
+        </div>
+
+
+    </section>
+</div>
+
+
+<div class="slider">
+    <div id="about-slider">
+        <div id="carousel-slider" class="carousel slide" data-ride="carousel" data-interval="20000">
+            <!-- Indicators -->
+            <ol class="carousel-indicators visible-xs">
+                <li data-target="#carousel-slider" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-slider" data-slide-to="1"></li>
+                <li data-target="#carousel-slider" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="item active" style="background-image: url({% static 'carousel_images/news_header.png' %})">
+                    <div class="carousel-caption">
+                        <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
+                            <h3>Django Project</h3>
+                            <h4>Integrating Integrated Assessment Modelling
+                                in Support of the Agreement
+                            </h4>
+                        </div>
+                        <div class="col-md-10 col-md-offset-1">
+                            <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.6s">
+                                <p style="margin-bottom: 0">Aiming to become the vessel of the international energy- and
+                                    climate-economy modelling community, Django Project is an open-access, data
+                                    exchange
+                                    platform hosting detailed documentation, inputs, and outputs of modelling tools and
+                                    exercises for all audiences</p>
+                                {#                                <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.9s">#}
+                                {#                                    <form style="margin-top: 0" class="form-inline">#}
+                                {#                                        <div class="form-group">#}
+                                {#                                            <p>Bridging the gap between scientists and stakeholders</p>#}
+                                {#                                        </div>#}
+                                {#                                    </form>#}
+                                {#                                </div>#}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item" style="background-image:url({% static 'carousel_images/news_header.png' %})">
+                    <div class="carousel-caption">
+                        <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="1.0s">
+                            <h2>Modelling documentation</h2>
+                        </div>
+                        <div class="col-md-10 col-md-offset-1">
+                            <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.6s">
+                                <p>Detailed, dynamic, and comparative documentation of quantitative systems models in
+                                    support of climate policy, regarding their representation of socioeconomics,
+                                    sectors, policies, mitigation/adaptation measures, and emissions, as well as their
+                                    geographic coverage</p>
+                            </div>
+                        </div>
+                        <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="1.6s">
+
+                            <div class="form-group">
+                                <button type="livedemo" class="btn btn-primary btn-lg doc_index">
+                                    <a href="#section-works" style="color: white" class="doc_index">
+                                        Explore
+                                    </a>
+                                </button>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="item" style="background-image:url({% static 'carousel_images/news_header.png' %})">
+                    <div class="carousel-caption">
+                        <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="1.0s">
+                            <h2>Workspaces of modelling exercises</h2>
+                        </div>
+                        <div class="col-md-10 col-md-offset-1">
+                            <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.6s">
+                                <p>Scientific interfaces, explanatory summaries for all audiences, along with customised
+                                    visualisations of results, libraries with relevant content and downloadable
+                                    datasets, heatmaps explaining how different models have been harmonised and/or
+                                    interlinked, and open access to model inputs and outputs</p>
+                            </div>
+                        </div>
+                        <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="1.6s">
+
+                            <div class="form-group">
+                                <button type="livedemo" class="btn btn-primary btn-lg service_index">
+                                    <a href="#section-services" style="color: white" class="service_index">
+                                        Explore
+                                    </a>
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a class="left carousel-control hidden-xs" href="#carousel-slider" data-slide="prev">
+                <i class="fa fa-angle-left"></i>
+            </a>
+
+            <a class=" right carousel-control hidden-xs" href="#carousel-slider" data-slide="next">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        </div>
+        <!--/#carousel-slider-->
+    </div>
+    <!--/#about-slider-->
+</div>
+<!--/#slider-->
+
+
+
+
+
+<!-- contact -->
+<hr>
+<section id="section-contact" class="section appear clearfix" style="">
+    <div class="container">
+
+        <div class="row mar-bot40">
+            <div class="col-md-offset-3 col-md-6">
+                <div class="section-header">
+                    <h2 class="section-heading animated" data-animation="bounceInUp">Contact us</h2>
+                    <p>For any information do not hesitate to contact us.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div id="sendmessage">Your message has been sent. Thank you!</div>
+                <div id="errormessage">Something went wrong! Please try again later!</div>
+                <form action="contact_form" method="post" role="form" class="contactForm">{% csrf_token %}
+                    <div class="form-group">
+                        <input type="text" name="username" class="form-control" id="username" placeholder="Your Name"
+                               data-rule="minlen:4"
+                               data-msg="Please enter at least 4 chars"/>
+                        <div class="validation"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
+                               data-rule="email"
+                               data-msg="Please enter a valid email"/>
+                        <div class="validation"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
+                               data-rule="minlen:4"
+                               data-msg="Please enter at least 8 chars of subject"/>
+                        <div class="validation"></div>
+                    </div>
+                    <div class="form-group">
+              <textarea class="form-control" name="message" rows="5" data-rule="required"
+                        data-msg="Please write something for us"
+                        placeholder="Message"></textarea>
+                        <div class="validation"></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="g-recaptcha" data-sitekey="6LewHqEdAAAAAG7A1uY2PJJbdLksCuhlD_N4k49j"></div>
+                    </div>
+
+
+                    <div class="text-center">
+                        <button type="submit" class="line-btn green">Send Message</button>
+                    </div>
+                </form>
+            </div>
+            <!-- ./span12 -->
+        </div>
+
+    </div>
+</section>
+<!-- map -->
+{#  <section id="section-map" class="clearfix">#}
+{#    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22864.11283411948!2d-73.96468908098944!3d40.630720240038435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sbg!4v1540447494452" width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>#}
+{#  </section>#}
+
+{% include "main_application/pages_footer.html" %}
+<a href="#header" class="scrollup"><i class="fa fa-chevron-up"></i></a>
+
+<script src={% static "main_theme/js/modernizr-2.6.2-respond-1.1.0.min.js" %}></script>
+<script src={% static "main_theme/js/jquery.js" %}></script>
+<script src={% static "main_theme/js/jquery.easing.1.3.js" %}></script>
+<script src={% static "main_theme/js/bootstrap.min.js" %}></script>
+<script src={% static "main_theme/js/jquery.isotope.min.js" %}></script>
+<script src={% static "main_theme/js/jquery.nicescroll.min.js" %}></script>
+<script src={% static "main_theme/js/fancybox/jquery.fancybox.pack.js" %}></script>
+<script src={% static "main_theme/js/skrollr.min.js" %}></script>
+<script src={% static "main_theme/js/jquery.scrollTo.js" %}></script>
+<script src={% static "main_theme/js/jquery.localScroll.js" %}></script>
+<script src={% static "main_theme/js/stellar.js" %}></script>
+<script src={% static "main_theme/js/responsive-slider.js" %}></script>
+<script src={% static "main_theme/js/jquery.appear.js" %}></script>
+<script src={% static "main_theme/js/grid.js" %}></script>
+<script src={% static "main_theme/js/main.js" %}></script>
+<script src={% static "main_theme/js/wow.min.js" %}></script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<script>
+    wow = new WOW({}).init();
+</script>
+<script src={% static "main_theme/contactform/contactform.js" %}></script>
+
+<script>
+    $(document).on('click', 'button.doc_index', function (e) {
+        $("a.doc_index")[0].click()
+    });
+    $(document).on('click', 'button.service_index', function (e) {
+        $("a.service_index")[0].click()
+    });
+
+
+
+
+</script>
+<script>
+    $(document).ready(function () {
+        $('#dynamic_doc_format_select').on('change', function () {
+            if ($(this).val() === '') {
+                $('.dynamic_doc a').attr('href', 'dynamic_doc/')
+            } else {
+                var str = 'dynamic_doc/?format=' + $(this).val();
+                $('.dynamic_doc a').attr('href', str)
+            }
+        });
+        setTimeout(function () {
+            $('.quick-access-content').css('float', 'right');
+        }, 100);
+    });
+</script>
+
+</body>
+
+</html>

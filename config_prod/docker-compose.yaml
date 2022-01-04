@@ -1,0 +1,58 @@
+version: '3'
+
+
+services:
+  nginx-proxy:
+    container_name: django_project_nginx
+    build:
+      context: "."
+      dockerfile: "./nginx/Dockerfile"
+    volumes:
+      - static_volume:/home/django_project/web/staticfiles
+      - www-certs:/etc/letsencrypt
+    ports:
+      - 80:80
+      - 443:443
+    restart: always
+    env_file:
+      - ../.env/prod/.env.staging.proxy-companion
+    depends_on:
+      - django_project
+
+
+  django_project:
+    container_name: ${APP_HOSTNAME}
+    hostname: ${APP_HOSTNAME}
+    build:
+      context: ".."
+      dockerfile: "./config_prod/Dockerfile"
+      args:
+        SETTINGS: ${SETTINGS}
+        PORT: ${PORT}
+    volumes:
+      - static_volume:/home/django_project/web/staticfiles
+    expose:
+      - ${PORT}
+    env_file:
+      - ../.env/prod/.env_app_prod
+    depends_on:
+      - django_project_db
+
+  django_project_db:
+    image: postgres:13.0-alpine
+    container_name: ${DB_HOST}
+    hostname: ${DB_HOST}
+    command: ["-c", "shared_buffers=3GB", "-c", "max_connections=1000", "-c", "idle_in_transaction_session_timeout=1min"]
+    ports:
+      - 5555:5432
+    volumes:
+      - django_project_db_prod_data:/var/lib/postgresql/data
+    env_file:
+      - ../.env/prod/.env_db_prod
+
+volumes:
+  django_project_db_prod_data:
+  static_volume:
+  www-certs:
+
+

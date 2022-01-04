@@ -1,0 +1,21 @@
+# PyCharm Directory
+.idea/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# Database Files
+db.sqlite3
+
+# Environmental Variables File
+.env/dev/.env_app_dev
+.env/dev/.env_db_dev
+.env/prod/.env_app_prod
+.env/prod/.env_db_prod
+.env/prod/.env.staging.proxy-companion
+
+# Compiled Message Files (binary)
+*.mo
+
+staticfiles/*
+wordcount.py
